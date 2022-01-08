@@ -14,7 +14,7 @@ const navigator = createStackNavigator(
 
   },
   {
-    initialRouteName: "Authors",  //first component that will be displayed
+    initialRouteName: "Splash",  //first component that will be displayed
     defaultNavigationOptions: {
       title: "Library App",
     },
