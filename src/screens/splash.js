@@ -9,8 +9,21 @@ import {
 } from 'react-native'
 
 export default class SplashScreen extends Component {
+
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //     timePassed: false
+    //     };
+    //   }
+    //   componentDidMount () {
+    //     setTimeout(() => this.setState({timePassed: true}), 1000)
+    //  }
+      
+
     render() {
         return (
+            
             <View style={[styles.container]}>
                 <StatusBar barStyle="dark-content" backgroundColor="#fff" />
                 <Image
@@ -33,7 +46,7 @@ const styles = StyleSheet.create({
     },
     imgCenter: {
         width: 200,
-        height: 200,
+        height: 201,
         marginBottom: 50
     }
 })
