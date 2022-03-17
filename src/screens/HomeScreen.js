@@ -1,16 +1,17 @@
-import React from 'react';
-import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
+// ./App.js
+
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+
+import DrawerNavigator from "../components/DrawerNavigator";
+import BottomTabStack from "../components/BottomTab";
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Text>Roohana</Text>
-    </View >
+    <NavigationContainer>
+      <DrawerNavigator />
+      {/* <BottomTabStack /> */}
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  
-});
-
 export default HomeScreen;

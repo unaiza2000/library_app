@@ -8,7 +8,7 @@ const SearchBar =({term, onTermChange, onTermSubmit}) => {
             <Feather name='search' style={styles.iconStyle}/>
             <TextInput 
                 autoCorrect={false}
-                placeholder='Search by author name' 
+                placeholder='Search' 
                 style={styles.inputStyle}
                 value={term}
                 onChangeText={onTermChange}  //passing reference of a function

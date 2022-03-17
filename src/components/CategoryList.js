@@ -1,10 +1,9 @@
-//screen for showing all searched authors
 import React from 'react';
 import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 import { withNavigation } from 'react-navigation'; 
 
-const AuthorsList  = ({results, navigation}) => {
+const CategoryList  = ({title, results, navigation}) => {
     if(!results.length){
         return null;
     }
@@ -14,13 +13,13 @@ const AuthorsList  = ({results, navigation}) => {
             <FlatList 
                 data={results}
                 showsVerticalScrollIndicator ={false}
-                keyExtractor={(result) => result.id }  
+                keyExtractor={(results) => results.id }  
                 renderItem={({item}) => {
                     return (
                         <View style={styles.container}>
                             <Card style={{padding: 10, margin: 10, height: 50}}>
-                                <TouchableOpacity  onPress={()=>navigation.navigate('AuthorResultsShow')} > 
-                                  <Text style={styles.text}>{item.volumeInfo.authors}</Text>
+                                <TouchableOpacity  onPress={()=>{}} > 
+                                  <Text style={styles.text}>{item.volumeInfo.categories}</Text>
                                 </TouchableOpacity>
                             </Card>
                         </View>
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom:10,
-        backgroundColor: 'white'
+        backgroundColor: 'red'
     },
     text:{
         fontWeight: 'bold',
@@ -46,4 +45,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default withNavigation(AuthorsList);
+export default withNavigation(CategoryList);
