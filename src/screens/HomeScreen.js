@@ -1,17 +1,30 @@
-// ./App.js
-
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native";
+import { createAppContainer, NavigationActions, withNavigation } from "react-navigation";
+// import { createStackNavigator } from "react-navigation-stack";
 
-import DrawerNavigator from "../components/DrawerNavigator";
-import BottomTabStack from "../components/BottomTab";
 
-const HomeScreen = () => {
+const HomeScreen2 = ({ navigation}) => {
   return (
-    <NavigationContainer>
-      <DrawerNavigator />
-      {/* <BottomTabStack /> */}
-    </NavigationContainer>
+    <View>
+      <Text></Text>
+        <Button
+          title="Login"
+          onPress={() => this.props.navigation.navigate(
+            'NestedNavigator1',
+            {},
+            NavigationActions.navigate({routeName: 'Loginprop'})
+          )}
+        />
+
+        <Button
+          title="Search By Categories"
+          onPress={() => navigation.navigate("Category1")}
+        />
+    </View>
   );
 };
-export default HomeScreen;
+
+const styles = StyleSheet.create({});
+
+export default HomeScreen2;

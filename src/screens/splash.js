@@ -9,18 +9,6 @@ import {
 } from 'react-native'
 
 export default class SplashScreen extends Component {
-
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //     timePassed: false
-    //     };
-    //   }
-    //   componentDidMount () {
-    //     setTimeout(() => this.setState({timePassed: true}), 1000)
-    //  }
-      
-
     render() {
         return (
             

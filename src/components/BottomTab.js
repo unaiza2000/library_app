@@ -1,21 +1,34 @@
 import React from "react";
-
+import { StyleSheet } from "react-native";
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-//import { ContactStackNavigator } from "./StackNavigator";
-//import TabNavigator from "./TabNavigator";
+// import { withNavigation } from 'react-navigation';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// import HomeScreen from "../screens/HomeScreen";
+import HomeScreen2 from "../screens/HomeScreen";
+import SearchByAuthorScreen from "../screens/SearchByAuthorScreen";
+// import SplashScreen from "react-native-splash-screen";
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabStack = () => {
     return (
       <Tab.Navigator
-        initialRouteName="HomeScreen"
-        tabBarOptions={{
-          activeTintColor: '#09AFDF',
+        initialRouteName="HomeScreen2"
+        screenOptions={{
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarActiveTintColor: '#29a9df',
           inactiveTintColor: 'gray',
-          style: {
+          tabBarStyle: {
             backgroundColor: '#e0e0e0',
+            position: 'absolute',
+            bottom: 10,
+            left: 10,
+            right: 10,
+            elevation: 0,
+            borderRadius: 10,
+            height:50,
+            ...styles.shadow
           },
           labelStyle: {
             textAlign: 'center',
@@ -24,34 +37,49 @@ const BottomTabStack = () => {
         }}>
         <Tab.Screen
           name="HomeScreen"
-          component={HomeScreen}
+          component={HomeScreen2}
           options={{
-            tabBarLabel: 'Home Screen',
-            /*tabBarIcon: ({ color, size }) => (
+            // headerShown: false,
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="home"
                 color={color}
                 size={size}
               />
-            ),*/
+            ),
           }}
         />
         <Tab.Screen
           name="ExploreScreen"
-          component={ExploreScreen}
+          component={SearchByAuthorScreen}
           options={{
-            tabBarLabel: 'Explore Screen',
-            /*tabBarIcon: ({ color, size }) => (
+            // headerShown: false,
+            tabBarLabel: 'Serach By Author',
+            tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
-                name="settings"
+                name="book-search"
                 color={color}
                 size={size}
               />
-            ),*/
+            ),
           }}
         />
       </Tab.Navigator>
     );
   };
 
-export default DrawerNavigator;
+  const styles = StyleSheet.create({
+    shadow: {
+      shadowColor: '#7f5df0',
+      shadowOffset:{
+        width:0,
+        height:10
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.5,
+      elevation: 5,
+    }
+  })
+
+export default BottomTabStack;
